@@ -40,6 +40,7 @@ public class NoteViewModelTest {
 
     /*
         can't observe a note that hasn't been set
+        hihi
      */
 
     @Test
