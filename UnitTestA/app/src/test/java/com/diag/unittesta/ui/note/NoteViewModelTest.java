@@ -41,7 +41,6 @@ public class NoteViewModelTest {
     /*
         can't observe a note that hasn't been set
      */
-
     @Test
     void observeEmptyNoteWhenNoteSet() throws Exception {
         // Arrange
