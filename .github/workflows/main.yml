@@ -7,7 +7,6 @@ jobs:
   test:
     runs-on: macos-latest # or any other machine
     steps:
-      ...
       - name: Unit Test
         run: ./gradlew testDebugUnitTest
 
