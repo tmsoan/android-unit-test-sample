@@ -5,7 +5,7 @@ on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
 
@@ -16,7 +16,7 @@ jobs:
 
       # Execute unit tests
       - name: Unit Test
-        run: chmod +x ./gradlew testDebugUnitTest
+        run: ./gradlew testDebugUnitTest
 
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
