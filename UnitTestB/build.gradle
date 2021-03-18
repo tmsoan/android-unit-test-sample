@@ -27,6 +27,6 @@ task clean(type: Delete) {
 
 tasks.register("runUnitTestTask") {
     group("verification")
-    dependsOn(":app:testDebugUnitTest")
+    dependsOn("app:testDebugUnitTest")
     description = "./gradlew runUnitTestTask # runs on GitHub Action"
 }
