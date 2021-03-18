@@ -27,13 +27,13 @@ jobs:
 #      - name: Grant execute permission for gradlew
 #        run: chmod +x UnitTestB/gradlew
 
-#      # gradle build
-#      - name: Build with Gradle
-#        run: ./UnitTestB/gradlew build
+      # gradle build
+      - name: Build with Gradle
+        run: ./UnitTestB/gradlew build
 
-      # run unit tests
-      - name: Unit Tests
-        run: ./UnitTestB/gradlew runUnitTestTask
+#      # run unit tests
+#      - name: Unit Tests
+#        run: ./UnitTestB/gradlew runUnitTestTask
 
       # unit test results
       - name: Upload Test Reports Folder
