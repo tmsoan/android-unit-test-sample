@@ -5,9 +5,9 @@ name: Android Dev CI
 
 on:
   pull_request:
-    branches: [test-ci, main, dev]
+    branches: [test-ci, main, develop, feature/impl_utest]
   push:
-    branches: [test-ci, main, dev]
+    branches: [test-ci, main, develop, feature/impl_utest]
 
 jobs:
 
