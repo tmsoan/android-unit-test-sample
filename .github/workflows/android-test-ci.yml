@@ -35,27 +35,24 @@ jobs:
       - name: Unit Tests
         run: cd UnitTestB && ./gradlew testDebugUnitTest
 
-      # unit test results
-      - name: Upload Test Reports Folder
-        uses: actions/upload-artifact@v2
-        if: ${{ always() }}
-        with:
-          name: unit-tests-reports
-          path: /UnitTestB/app/build/test-results
-
-  report:
-    name: Unit Tests Report
-    runs-on: ubuntu-latest
-    needs: test # Run after test job
-    if: ${{ always() }}
-    steps:
-      - name: Download Test Reports Folder
-        uses: actions/download-artifact@v2
-        with:
-          name: reports
-
+      # unit test report
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }}
+
+#  report:
+#    name: Unit Tests Report
+#    runs-on: ubuntu-latest
+#    needs: test # Run after test job
+#    if: ${{ always() }}
+#    steps:
+#      - name: Download Test Reports Folder
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: reports
+#
+#      - name: Android Test Report
+#        uses: asadmansr/android-test-report-action@v1.2.0
 
 
 
