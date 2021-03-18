@@ -33,10 +33,10 @@ jobs:
       - name: Unit Tests
         run: cd UnitTestB && ./gradlew testDebugUnitTest
 
-#      # unit test report
-#      - name: Android Test Report
-#        uses: asadmansr/android-test-report-action@v1.2.0
-#        if: ${{ always() }}
+      # unit test report
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }}
 
 
   # Report job
