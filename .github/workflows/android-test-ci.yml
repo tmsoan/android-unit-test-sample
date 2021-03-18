@@ -46,6 +46,7 @@ jobs:
           path: app/build/test-results
 
   report:
+    name: Unit Tests Report
     runs-on: ubuntu-latest
     needs: test # Run after test job
     if: ${{ always() }}
