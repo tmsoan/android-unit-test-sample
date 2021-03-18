@@ -31,9 +31,18 @@ jobs:
 #      - name: Build with Gradle
 #        run: ./UnitTestB/gradlew build
 
+      # Execute Gradle commands in GitHub Actions workflows
+      # => https://github.com/marketplace/actions/gradle-command
+      - uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: runOnGitHub
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+
       # run unit tests
-      - name: Unit Tests
-        run: ./UnitTestB/gradlew runOnGitHub
+#      - name: Unit Tests
+#        run: ./UnitTestB/gradlew runOnGitHub
 
       # unit test results
       - name: Upload Test Reports Folder
