@@ -23,12 +23,12 @@ jobs:
         with:
           java-version: 1.8
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: chmod +x ../../UnitTestB/gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ../../UnitTestB/gradlew build
 
       - name: Run Tests
-        run: ./gradlew test
+        run: ../../UnitTestB/gradlew test
 
       - name: Unit Tests Results
         uses: actions/upload-artifact@v1
@@ -47,7 +47,7 @@ jobs:
         with:
           java-version: 1.8
       - name: Lint debug flavor
-        run: ./gradlew lintDebug --stacktrace
+        run: ../../UnitTestB/gradlew lintDebug --stacktrace
       - name: Lint results
         uses: actions/upload-artifact@v1
         with:
