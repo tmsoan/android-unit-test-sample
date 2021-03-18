@@ -5,11 +5,9 @@ name: Android CI main
 
 on:
   pull_request:
-    branches:
-      - 'test-ci'
+    branches: [test-ci, main]
   push:
-    branches:
-      - 'test-ci'
+    branches: [test-ci, main]
 
 jobs:
   test:
@@ -35,7 +33,7 @@ jobs:
 
       # run unit tests
       - name: Unit Tests
-        run: ./UnitTestB/gradlew testDebugUnitTest
+        run: ./UnitTestB/gradlew runOnGitHub
 
       # unit test results
       - name: Upload Test Reports Folder
