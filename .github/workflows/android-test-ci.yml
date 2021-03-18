@@ -28,7 +28,7 @@ jobs:
         run: ./UnitTestB/gradlew build
 
       - name: Run Tests
-        run: ./UnitTestB/gradlew testDebugUnitTest
+        run: ./UnitTestB/gradlew testDebugUnitTest --debug
 
       - name: Unit Tests Results
         uses: actions/upload-artifact@v1
