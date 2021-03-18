@@ -33,7 +33,7 @@ jobs:
 
       # run unit tests
       - name: Unit Tests
-        run: ./UnitTestB/gradlew app:testDebugUnitTest
+        run: ./UnitTestB/gradlew "app:testDebugUnitTest"
 
       # unit test results
       - name: Upload Test Reports Folder
