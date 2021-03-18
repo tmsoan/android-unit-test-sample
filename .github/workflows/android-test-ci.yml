@@ -23,12 +23,12 @@ jobs:
         with:
           java-version: 1.8
       - name: Grant execute permission for gradlew
-        run: chmod +x ../../UnitTestB/gradlew
+        run: chmod +x UnitTestB/gradlew
       - name: Build with Gradle
-        run: ../../UnitTestB/gradlew build
+        run: ./UnitTestB/gradlew build
 
       - name: Run Tests
-        run: ../../UnitTestB/gradlew test
+        run: ./UnitTestB/gradlew test
 
       - name: Unit Tests Results
         uses: actions/upload-artifact@v1
