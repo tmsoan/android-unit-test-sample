@@ -25,10 +25,6 @@ jobs:
         with:
           java-version: 1.8
 
-#      # gradle build
-#      - name: Build with Gradle
-#        run: ./UnitTestB/gradlew build
-
       # run unit tests
       - name: Unit Tests
         run: cd UnitTestB && ./gradlew testDebugUnitTest
@@ -37,19 +33,6 @@ jobs:
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
         if: ${{ always() }}
-
-
-  # Report job
-  report:
-    name: Unit Tests Report
-    runs-on: ubuntu-latest
-    needs: test # Run after test job
-    if: ${{ always() }}
-    steps:
-      - name: Go to project folder
-        run: cd UnitTestB
-      - name: Android Test Report
-        uses: asadmansr/android-test-report-action@v1.2.0
 
 
 
