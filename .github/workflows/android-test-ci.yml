@@ -10,6 +10,8 @@ on:
     branches: [test-ci, main]
 
 jobs:
+
+  # Test job
   test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
@@ -23,10 +25,6 @@ jobs:
         with:
           java-version: 1.8
 
-#      # grant permission for gradlew
-#      - name: Grant execute permission for gradlew
-#        run: chmod +x UnitTestB/gradlew
-
 #      # gradle build
 #      - name: Build with Gradle
 #        run: ./UnitTestB/gradlew build
@@ -35,24 +33,26 @@ jobs:
       - name: Unit Tests
         run: cd UnitTestB && ./gradlew testDebugUnitTest
 
-      # unit test report
-      - name: Android Test Report
-        uses: asadmansr/android-test-report-action@v1.2.0
-        if: ${{ always() }}
-
-#  report:
-#    name: Unit Tests Report
-#    runs-on: ubuntu-latest
-#    needs: test # Run after test job
-#    if: ${{ always() }}
-#    steps:
-#      - name: Download Test Reports Folder
-#        uses: actions/download-artifact@v2
-#        with:
-#          name: reports
-#
+#      # unit test report
 #      - name: Android Test Report
 #        uses: asadmansr/android-test-report-action@v1.2.0
+#        if: ${{ always() }}
+
+
+  # Report job
+  report:
+    name: Unit Tests Report
+    runs-on: ubuntu-latest
+    needs: test # Run after test job
+    if: ${{ always() }}
+    steps:
+      - name: Download Test Reports Folder
+        uses: actions/download-artifact@v2
+        with:
+          name: reports
+
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
 
 
 
