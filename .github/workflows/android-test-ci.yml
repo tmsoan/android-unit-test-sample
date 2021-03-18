@@ -41,7 +41,7 @@ jobs:
         if: ${{ always() }}
         with:
           name: unit-tests-reports
-          path: app/build/test-results
+          path: /UnitTestB/app/build/test-results
 
   report:
     name: Unit Tests Report
