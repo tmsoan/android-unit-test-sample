@@ -21,12 +21,8 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
 tasks.register("runUnitTestTask") {
-    group("verification")
     dependsOn("app:testDebugUnitTest")
+    group = "custom"
     description = "./gradlew runUnitTestTask # runs on GitHub Action"
 }
